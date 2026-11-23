@@ -1,0 +1,6 @@
+{
+  "name": "Skywall",
+  "description": "Skywall Painting Solutions customer, estimate, payment, and WhatsApp follow-up manager",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Skywall வாடிக்கையாளர்கள்</title>
+<meta name="description" content="Skywall Painting Solutions வாடிக்கையாளர் மேலாண்மை ஆப்">
+<meta name="theme-color" content="#0b2160">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@500;700;800&family=Noto+Sans+Tamil:wght@400;500;600&family=Montserrat:wght@600;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">
+      <div class="lockup">
+        <div class="mark" aria-hidden="true">
+          <svg viewBox="0 0 560 289" role="img" aria-label="Skywall Painting Solutions லோகோ">
+            <rect width="560" height="289" fill="#fff"/>
+            <rect x="60" y="50" width="440" height="150" rx="14" fill="#0a7be8"/>
+            <rect x="60" y="200" width="440" height="22" fill="#0b2160"/>
+            <circle cx="400" cy="95" r="30" fill="#ffd24a"/>
+            <path d="M60 170 Q150 110 240 160 T420 150 T500 160 V200 H60Z" fill="#0b2160" opacity=".35"/>
+          </svg>
+        </div>
+        <div class="wm">
+          <h1 class="w1" aria-label="Skywall Painting Solutions">SKY<b>WALL</b></h1>
+          <div class="w2" aria-hidden="true">PAINTING SOLUTIONS</div>
+          <div class="w3" aria-hidden="true">WE PAINT YOUR DREAMS</div>
+        </div>
+      </div>
+      <p id="bizInfo"></p>
+    </div>
+    <div class="tools-top">
+      <span class="sync warn" id="sync">இந்த உலாவியில் மட்டும் சேமிப்பு</span>
+      <button class="btn small" type="button" data-act="settings">அமைப்புகள்</button>
+      <button class="btn small" type="button" data-act="export">CSV சேமி</button>
+    </div>
+  </div>
+
+  <div class="note" id="exampleNote" hidden>
+    <span>இப்போது தெரிவது மாதிரி தரவு. உங்கள் உண்மையான வாடிக்கையாளர்களைச் சேர்த்தபின் நீக்கலாம்.</span>
+    <button class="btn small" type="button" data-act="clearex">மாதிரி தரவை நீக்கு</button>
+  </div>
+
+  <section class="tasks" id="tasks" aria-labelledby="tasksH" hidden></section>
+  <div class="stats" id="stats"></div>
+
+  <div class="two">
+    <section class="panel" aria-labelledby="chH"><h2 id="chH">கடந்த 6 மாத வசூல்</h2><div class="chart" id="chart"></div></section>
+    <section class="panel" aria-labelledby="duH"><h2 id="duH">பாக்கி வசூலிக்க வேண்டியவர்கள்</h2><ul class="dues" id="dues"></ul></section>
+  </div>
+
+  <div class="bar" id="bar" role="img" aria-label="நிலை வாரியான வாடிக்கையாளர்கள்"></div>
+  <div class="filters" id="filters"></div>
+  <div class="tools">
+    <input type="search" id="search" placeholder="பெயர், தொலைபேசி, இடம், வேலை, நிறம் மூலம் தேடு" aria-label="தேடல்">
+    <select id="sort" aria-label="வரிசை">
+      <option value="new">புதியது முதல்</option>
+      <option value="due">பாக்கி அதிகம்</option>
+      <option value="value">மதிப்பீடு அதிகம்</option>
+      <option value="follow">பின்தொடர்தல் தேதி</option>
+      <option value="name">பெயர் வரிசை</option>
+    </select>
+  </div>
+  <div class="list" id="list"></div>
+</div>
+
+<button class="btn primary fab" type="button" data-act="add">+ புதிய வாடிக்கையாளர்</button>
+<div id="overlay"></div>
+<div id="toast" class="toast" hidden></div>
+<input type="file" id="importFile" accept="application/json,.json" hidden>
+
+<script src="app.js"></script>
+</body>
+</html>

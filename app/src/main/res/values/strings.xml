@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Skywall</string>
+    <string name="app_subtitle">Skywall வாடிக்கையாளர்கள்</string>
+    <string name="brand_wordmark">SKYWALL</string>
+    <string name="brand_sub">PAINTING SOLUTIONS</string>
+    <string name="brand_tagline">WE PAINT YOUR DREAMS</string>
+    <string name="offline_badge">ஆஃப்லைன் சேமிப்பு</string>
+    <string name="action_settings">அமைப்புகள்</string>
+    <string name="action_export_csv">CSV சேமி</string>
+    <string name="action_add_customer">புதிய வாடிக்கையாளர்</string>
+    <string name="action_close">மூடு</string>
+    <string name="action_save">சேமி</string>
+    <string name="action_cancel">ரத்து</string>
+    <string name="action_edit">திருத்து</string>
+    <string name="action_delete">நீக்கு</string>
+    <string name="action_detail">விவரம்</string>
+    <string name="action_whatsapp">WhatsApp</string>
+    <string name="action_whatsapp_send">WhatsApp-ல் அனுப்பு</string>
+    <string name="action_copy">நகலெடு</string>
+    <string name="sample_banner_text">இப்போது தெரிவது மாதிரி தரவு. உங்கள் உண்மையான வாடிக்கையாளர்களைச் சேர்த்தபின் நீக்கலாம்.</string>
+    <string name="sample_banner_clear">மாதிரி தரவை நீக்கு</string>
+    <string name="search_placeholder">பெயர், தொலைபேசி, இடம், வேலை, நிறம் மூலம் தேடு</string>
+    <string name="empty_customers_title">வாடிக்கையாளர்கள் இல்லை</string>
+    <string name="empty_customers_filter_hint">வடிகட்டியை மாற்றிப் பாருங்கள்.</string>
+    <string name="empty_customers_add_hint">"+ புதிய வாடிக்கையாளர்" பொத்தானை அழுத்தவும்.</string>
+    <string name="logo_content_desc">Skywall Painting Solutions லோகோ</string>
+</resources>
