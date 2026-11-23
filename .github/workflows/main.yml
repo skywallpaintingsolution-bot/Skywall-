@@ -23,16 +23,19 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Create Debug Keystore
+      - name: Create Debug Keystore Everywhere
         run: |
-          keytool -genkeypair -v -storetype JKS -keystore .debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Debug,O=Debug,C=US"
-          keytool -genkeypair -v -storetype JKS -keystore .debugkeystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Debug,O=Debug,C=US"
-          keytool -genkeypair -v -storetype JKS -keystore app/.debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Debug,O=Debug,C=US"
-          keytool -genkeypair -v -storetype JKS -keystore app/.debugkeystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Debug,O=Debug,C=US"
-          ls -la .debug* app/.debug* || true
+          mkdir -p $HOME/.android app
+          keytool -genkeypair -v -storetype JKS -keystore $HOME/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Debug,O=Debug,C=US"
+          cp $HOME/.android/debug.keystore .debug.keystore
+          cp $HOME/.android/debug.keystore .debugkeystore
+          cp $HOME/.android/debug.keystore app/.debug.keystore
+          cp $HOME/.android/debug.keystore app/.debugkeystore
+          cp $HOME/.android/debug.keystore debug.keystore
+          ls -lh $HOME/.android/debug.keystore .debug.keystore app/.debug.keystore
 
       - name: Build Debug APK
-        run: gradle assembleDebug
+        run: gradle clean assembleDebug --no-configuration-cache --refresh-dependencies
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
