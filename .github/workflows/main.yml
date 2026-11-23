@@ -25,8 +25,11 @@ jobs:
 
       - name: Create Debug Keystore
         run: |
-          keytool -genkeypair -v -keystore .debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
-          keytool -genkeypair -v -keystore app/.debugkeystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          keytool -genkeypair -v -storetype JKS -keystore .debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Debug,O=Debug,C=US"
+          keytool -genkeypair -v -storetype JKS -keystore .debugkeystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Debug,O=Debug,C=US"
+          keytool -genkeypair -v -storetype JKS -keystore app/.debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Debug,O=Debug,C=US"
+          keytool -genkeypair -v -storetype JKS -keystore app/.debugkeystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Debug,O=Debug,C=US"
+          ls -la .debug* app/.debug* || true
 
       - name: Build Debug APK
         run: gradle assembleDebug
